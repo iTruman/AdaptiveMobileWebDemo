@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>页面自适应Demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"> </script>  <!-- 菜鸟jQuery -->
+	<style type="text/css">
+		html{
+			font-size: 20px;
+		}
+		#container{
+			margin: 5em auto;
+			height: 10em;
+			width: 100%;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.bee{
+			width: 10em;
+			height: 10em;
+		}
+		input{
+			height: 1.5em;
+			margin-top: 0.5em;
+			width:10em;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="toip">
+		<h2>这是一个Demo</h2>
+		<p>我存在一个P标签内</p>
+	</div>
+	<form id="detail">
+		<input type="text" name="id"><br>
+		<input type="text" name="password"><br>
+		<input type="text" name="password"><br>
+		<input type="submit" name="提   交">
+	</form>
+	<div id="linker">
+		<span >浏览器</span>
+	</div>
+</div>
+</body>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize =Math.floor(100*(clientWidth / 1366))+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document,window);
+
+	$(function fontSize() {
+		$("p").click(function () {
+			console.log("字体大小为：" + $(this).css('font-size'));
+			$("input[type='text']").val("nihao");
+		});
+	});
+</script>
+</html>

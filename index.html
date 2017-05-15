@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/style.css">
+	<title>DEMO</title>
+</head>
+<body>
+	<section class="banner">
+			<img src="images/banner.gif">
+	</section>
+	<section class="main">
+		<div class="tab">
+			<ul>
+				<li class="curr">欢乐游记</li>
+				<li>早读上海</li>
+				<li>直击现场</li>
+			</ul>
+		</div>	
+		<div class="list">
+			<dl class="l_list" style="display: block;">
+				<dd>
+					<div class="pic" style="background-image:url(http://img-ossimg.ajmide.com/upload/201609/23/17632-1BNg1h_1280x960.jpg@300w_300h_l1_90q.jpg)">
+						<div class="btn play"></div>
+					</div>
+					<div class="text">
+						<h5>#国际山地旅游大会#201</h5>
+						<div class="audio">
+							<div class="progress"><span></span></div>
+							<p class="time">00:00</p>
+						</div>
+						<p class="comment">珈琦：啊 我这大粗气喘的</p>
+						<div class="bot">
+							<span>山水贵客</span>
+							<p class="icon"><i class="sp"></i>89</p>
+						</div>
+					</div>
+				</dd>
+			</dl>
+			<dl class="m_list">
+				<dd>
+					<img src="images/4.jpg">
+				</dd>
+				<dd>
+					<video class="vide" width="100%" height="100%" controls>
+						<source src="media/exam.mp4" type="video/mp4">
+					<!-- 	<source src="movie.ogg" type="video/ogg">
+						<source src="movie.webm" type="video/webm">
+						<object data="movie.mp4" width="320" height="240">
+							<embed src="movie.swf" width="320" height="240">
+						</object>  -->
+					</audio>
+				</dd>
+				<dd>
+					<img src="images/2.jpg">
+				</dd>
+				<dd>
+					<img src="images/1.jpg">
+				</dd>
+			</dl>
+			<dl class="r_list" >
+				<dd>
+				<div class="pic">
+						<img src="images/logo.png">
+						<i class="btn play"></i>
+					</div>
+					<div class="text">
+						<h5>最新直播<i class="sp i_zb"></i></h5>
+						<p class="tip"><i class="sp i_gz"></i>2222</p>
+						<p><i class="sp i_zcr"></i>Author</p>
+						<p class="con">
+							全天候滚动直播的新闻节目,综合新闻、财经资讯、文体资讯,随时滚动更新。全天候滚动直播的新闻节目,综合新闻、财经资讯、文体资讯,随时滚动更新
+						</p>
+					</div>
+				</dd>
+				<dd>
+					<div class="pic">
+						<img src="images/logo.png">
+						<i class="btn play"></i>
+					</div>
+					<div class="text">
+						<h5>侬好上海<i class="sp i_zb"></i></h5>
+						<p class="tip"><i class="sp i_gz"></i>2222</p>
+						<p><i class="sp i_zcr"></i>Author</p>
+						<p class="con">
+							全天候滚动直播的新闻节目,综合新闻、财经资讯、文体资讯,随时滚动更新。全天候滚动直播的新闻节目,综合新闻、财经资讯、文体资讯,随时滚动更新
+						</p>
+					</div>
+				</dd>
+			</dl>
+		</div>
+	</section>
+	<footer>
+		<p>©2017</p>
+	</footer>					
+</body>
+	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+	<script>
+	//调整字体大小
+	;(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize =Math.floor(100*(clientWidth / 1080))+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document,window);
+
+	$(function() {
+		// click tab切换
+		$('.tab li').on('click',function () {	
+			var index = $(this).index();
+			console.log("li字体大小为：" + $('li').css('font-size') + '\n' + "图片宽度为:" + $('.pic img').css('width') + '\n' + "h5字体大小为：" + $('h5').css('font-size') + '\n' + "gz字体大小为：" + $('.i_gz').css('font-size') + '\n' + "con字体大小为：" + $('.con').css('font-size') + '\n' + "宽度为：" + $('.top_img').css('width'));
+			$('.tab li').removeClass('curr');
+			$(this).addClass('curr');
+			$('.list dl').hide();
+			$('.list dl').eq(index).show();
+		});
+		// 播放 & 暂停
+		$('.btn').on('click',function () {
+			if($(this).hasClass('play')) {
+				$(this).removeClass('play').addClass('pause');
+			}else {
+				$(this).removeClass('pause').addClass('play');
+			}	
+		});
+		// 一次性链接
+		$('.r_list .text').one('click',function () {
+			window.open('https://www.baidu.com');
+		});
+		// 
+	});
+	</script>
+</html>
