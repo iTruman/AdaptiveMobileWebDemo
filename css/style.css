@@ -5,7 +5,7 @@ body{font: "Segoe UI", "Microsoft Yahei";line-height: 1.5;background:url(../imag
 .banner{width: 100%;}
 .banner img{display: block; width: 100%;}
 
-.main{padding:.15rem; min-height:700px;} 
+.main{padding:.15rem; min-height:396px;} 
 .tab ul{list-style: none; display: -webkit-box; width: 90%; margin: 3% auto;}
 .tab li{-webkit-box-flex:3; padding:0 3%; font-size:.45rem; text-align:center; color:#626262;}
 .tab li.curr{color:#ed6d00;border-bottom:2px solid #ed6d00;font-weight: 600;}
@@ -13,11 +13,11 @@ body{font: "Segoe UI", "Microsoft Yahei";line-height: 1.5;background:url(../imag
 .list dl{display: none;}
 .list dd{margin-top: 10px; padding: 0;}
 .list .pic{position:relative;width: 2.7em;height:2.7em;overflow:hidden;margin-right:4%;}
-.list .pic img{display: block;width: 100%;}
+.list .pic img{display: block;width: 100%;border-radius: 10px;}
 .list .btn{background:url(../images/sp.png) no-repeat;background-size:9rem auto;display:block;position:absolute;width:2rem;height:2rem;bottom:18%;right:18%;}
 .list .sp{background:url(../images/sp.png) no-repeat;background-size: 200px auto;}
-.list .play{background-position: -5.94rem .20rem;}
-.list .pause{background-position: -3.60rem .20rem;}
+.list .play{background-position: -5.92rem .19rem;}
+.list .pause{background-position: -3.58rem .20rem;}
 .list .text{-webkit-box-flex:1;position:relative;font-size:.4rem;color: #666;line-height: 1.6;}
 
 .l_list dd{display:-webkit-box;border: 1px solid lightgray; padding: 4%}
